@@ -43,8 +43,8 @@
         { "name": "en", "label": "English", "widget": "text", "required": false, "default": "" },
         { "name": "es", "label": "Spanish", "widget": "text", "required": false, "default": "" }
       ]},
-      { "name": "cardBg", "label": "Card background image", "widget": "image", "required": false, "default": "", "hint": "Upload a PNG, JPG or WebP image, or paste an HTTPS image URL. Use filenames with letters, numbers and hyphens." },
-      { "name": "theme", "label": "Card style", "widget": "select", "default": "default", "options": [{"label":"Aqua", "value":"default"}, {"label":"Lavender", "value":"ottawa"}, {"label":"Blue", "value":"niagara"}, {"label":"Lime", "value":"franklinpark"}, {"label":"Gold", "value":"san-antonio"}, {"label":"Lime, compact title (legacy Arlington)", "value":"arlington"}] },
+      { "name": "theme", "label": "Card color", "widget": "card-color", "default": "default" },
+      { "name": "cardBg", "label": "Card background image", "widget": "card-background", "required": false, "default": "", "hint": "Choose an existing design or expand the custom-image section to upload your own." },
       { "name": "glow", "label": "Accent glow", "widget": "select", "default": "var(--teal)", "options": [{"label":"Teal", "value":"var(--teal)"}, {"label":"Gold", "value":"var(--gold)"}, {"label":"Coral", "value":"var(--coral)"}, {"label":"Lavender", "value":"var(--lavender)"}, {"label":"Aqua", "value":"var(--aqua)"}, {"label":"Blue", "value":"var(--cyan)"}, {"label":"Lime", "value":"#c5f84f"}] },
       { "name": "emoji", "label": "Location icon", "widget": "string", "required": false, "default": "🛒" },
       { "name": "booking", "label": "Checkfront checkout", "widget": "checkfront", "default": { "enabled": false, "host": "royalduck.checkfront.com", "categoryId": "", "startDate": "", "options": "tabs" } },

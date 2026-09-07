@@ -64,7 +64,7 @@
             h('strong', {}, text('hoursNote')),
             h('p', { style: { whiteSpace: 'pre-line' } }, text('hours')),
             h('p', { style: { whiteSpace: 'pre-line' } }, text('announcement'))),
-          h('div', { className: 'evc-ft' }, ev.booking && ev.booking.enabled ? h('span', { className: 'preview-ticket' }, 'Get Tickets') : 'Booking disabled')),
+          h('div', { className: 'evc-ft' }, ev.booking && ev.booking.enabled ? h('span', { className: 'btn bt bs preview-ticket' }, 'Get Tickets') : 'Booking disabled')),
         h('p', { className: 'preview-help' }, 'Visibility after approval: ' + (ev.status || 'published'))
       );
     }

@@ -34,42 +34,46 @@ body.ev-sec-inview .ev-duck{opacity:1;visibility:visible}
 .ev-flt--regions .ev-f:hover{background:rgba(255,255,255,.55);border-color:rgba(6,78,59,.55);color:#064E3B}
 .ev-flt--regions .ev-f.on{font-weight:700;background:rgba(6,78,59,.1);border-color:#064E3B;border-width:2px;padding:6px 11px;color:#064E3B;box-shadow:0 1px 8px rgba(6,78,59,.12)}
 .ev-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));justify-content:center;justify-items:center;gap:52px 56px;max-width:960px;margin:0 auto;position:relative;z-index:1}
-.evc{background:#ffffff;border:8px solid #A855F7;border-radius:20px;padding:32px 22px 0;
+.evc{background:#ffffff;border:8px solid #7afff8;border-radius:20px;padding:32px 22px 0;
   width:100%;max-width:420px;min-width:280px;
   flex:1 1 auto;
   position:relative;overflow:visible;transition:all .4s;cursor:default;box-shadow:0 4px 20px rgba(0,0,0,.06);
   display:flex;flex-direction:column;min-height:520px}
-.evc:hover{border-color:#9333EA;transform:translateY(-4px);box-shadow:0 12px 32px rgba(168,85,247,.2)}
+.evc:hover{border-color:#5ee8e0;transform:translateY(-4px);box-shadow:0 12px 32px rgba(122,255,248,.3)}
 .evc::before{content:'';position:absolute;inset:-1px;border-radius:20px;padding:1px;
   background:linear-gradient(135deg,transparent 50%,rgba(168,85,247,.08));
   -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
 .evc:hover::before{opacity:1}
+.evc-ft .btn.bt{opacity:1;padding:14px 32px;font-size:1.12rem;color:#ffffff!important;background:#A855F7!important;border:2px solid #A855F7!important;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.evc-ft .btn.bt:hover{color:#ffffff!important;background:#9333EA!important;border-color:#9333EA!important}
 .evc--card-bg{background-color:#ffffff;background-size:100% auto;background-position:bottom center;background-repeat:no-repeat;border-color:#7afff8}
 .evc--card-bg:hover{border-color:#5ee8e0;box-shadow:0 12px 32px rgba(122,255,248,.3)}
 .evc--card-bg::after{content:'';position:absolute;inset:0;border-radius:16px;background:rgba(255,255,255, 0.1);pointer-events:none;z-index:0}
 .evc--card-bg > *{position:relative;z-index:1}
 .evc--card-bg .evc-ft .btn.bt{background:#7afff8!important;border-color:#7afff8!important;color:#064E3B!important}
 .evc--card-bg .evc-ft .btn.bt:hover{background:#5ee8e0!important;border-color:#5ee8e0!important;color:#064E3B!important}
-.evc--card-bg.evc--ottawa{border-color:#C4B5FD}
-.evc--card-bg.evc--ottawa:hover{border-color:#A78BFA;box-shadow:0 12px 32px rgba(167,139,250,.3)}
-.evc--card-bg.evc--ottawa .evc-ft .btn.bt{background:#C4B5FD!important;border-color:#C4B5FD!important;color:#1e1b4b!important}
-.evc--card-bg.evc--ottawa .evc-ft .btn.bt:hover{background:#A78BFA!important;border-color:#A78BFA!important;color:#1e1b4b!important}
-.evc--card-bg.evc--niagara{border-color:#93C5FD}
-.evc--card-bg.evc--niagara:hover{border-color:#60A5FA;box-shadow:0 12px 32px rgba(147,197,253,.35)}
-.evc--card-bg.evc--niagara .evc-ft .btn.bt{background:#93C5FD!important;border-color:#93C5FD!important;color:#1e3a8a!important}
-.evc--card-bg.evc--niagara .evc-ft .btn.bt:hover{background:#60A5FA!important;border-color:#60A5FA!important;color:#1e3a8a!important}
+.evc .evc-ft .btn.bt{background:#7afff8!important;border-color:#7afff8!important;color:#064E3B!important}
+.evc .evc-ft .btn.bt:hover{background:#5ee8e0!important;border-color:#5ee8e0!important;color:#064E3B!important}
+.evc.evc--ottawa{border-color:#C4B5FD}
+.evc.evc--ottawa:hover{border-color:#A78BFA;box-shadow:0 12px 32px rgba(167,139,250,.3)}
+.evc.evc--ottawa .evc-ft .btn.bt{background:#C4B5FD!important;border-color:#C4B5FD!important;color:#1e1b4b!important}
+.evc.evc--ottawa .evc-ft .btn.bt:hover{background:#A78BFA!important;border-color:#A78BFA!important;color:#1e1b4b!important}
+.evc.evc--niagara{border-color:#93C5FD}
+.evc.evc--niagara:hover{border-color:#60A5FA;box-shadow:0 12px 32px rgba(147,197,253,.35)}
+.evc.evc--niagara .evc-ft .btn.bt{background:#93C5FD!important;border-color:#93C5FD!important;color:#1e3a8a!important}
+.evc.evc--niagara .evc-ft .btn.bt:hover{background:#60A5FA!important;border-color:#60A5FA!important;color:#1e3a8a!important}
 /* Lime card theme: Arlington (long-title tweaks below) + Franklin Park / Toledo */
-.evc--card-bg:is(.evc--arlington,.evc--franklinpark){border-color:#c5f84f}
+.evc:is(.evc--arlington,.evc--franklinpark){border-color:#c5f84f}
 .evc--arlington .evc-st.st-up{display:none}
 .evc--arlington .evc-nm{font-size:1.3rem;white-space:nowrap}
-.evc--card-bg:is(.evc--arlington,.evc--franklinpark):hover{border-color:#a8d83d;box-shadow:0 12px 32px rgba(197,248,79,.35)}
-.evc--card-bg:is(.evc--arlington,.evc--franklinpark) .evc-ft .btn.bt{background:#c5f84f!important;border-color:#c5f84f!important;color:#064E3B!important}
-.evc--card-bg:is(.evc--arlington,.evc--franklinpark) .evc-ft .btn.bt:hover{background:#a8d83d!important;border-color:#a8d83d!important;color:#064E3B!important}
-.evc--card-bg.evc--san-antonio{border-color:#FBBF24;background-size:115% auto}
-.evc--card-bg.evc--san-antonio:hover{border-color:#F59E0B;box-shadow:0 12px 32px rgba(251,191,36,.35)}
-.evc--card-bg.evc--san-antonio .evc-ft .btn.bt{background:#FBBF24!important;border-color:#FBBF24!important;color:#064E3B!important}
-.evc--card-bg.evc--san-antonio .evc-ft .btn.bt:hover{background:#F59E0B!important;border-color:#F59E0B!important;color:#064E3B!important}
+.evc:is(.evc--arlington,.evc--franklinpark):hover{border-color:#a8d83d;box-shadow:0 12px 32px rgba(197,248,79,.35)}
+.evc:is(.evc--arlington,.evc--franklinpark) .evc-ft .btn.bt{background:#c5f84f!important;border-color:#c5f84f!important;color:#064E3B!important}
+.evc:is(.evc--arlington,.evc--franklinpark) .evc-ft .btn.bt:hover{background:#a8d83d!important;border-color:#a8d83d!important;color:#064E3B!important}
+.evc.evc--san-antonio{border-color:#FBBF24;background-size:115% auto}
+.evc.evc--san-antonio:hover{border-color:#F59E0B;box-shadow:0 12px 32px rgba(251,191,36,.35)}
+.evc.evc--san-antonio .evc-ft .btn.bt{background:#FBBF24!important;border-color:#FBBF24!important;color:#064E3B!important}
+.evc.evc--san-antonio .evc-ft .btn.bt:hover{background:#F59E0B!important;border-color:#F59E0B!important;color:#064E3B!important}
 .evc-glow{position:absolute;width:140px;height:140px;border-radius:50%;filter:blur(55px);opacity:0;transition:opacity .4s;bottom:-45px;right:-45px}
 .evc:hover .evc-glow{opacity:.12}
 .evc-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;gap:10px}
@@ -102,8 +106,6 @@ body.ev-sec-inview .ev-duck{opacity:1;visibility:visible}
 .evc-ft{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;margin-bottom:0;padding:12px 0 0;justify-content:center;align-items:center;position:relative;z-index:2}
 .evc-cd + .evc-ft,.evc-pg + .evc-ft{padding-top:10px}
 .evc-ft .btn{transform:translateY(50%)}
-.evc-ft .btn.bt{opacity:1;padding:14px 32px;font-size:1.12rem;color:#ffffff!important;background:#A855F7!important;border:2px solid #A855F7!important;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-.evc-ft .btn.bt:hover{color:#ffffff!important;background:#9333EA!important;border-color:#9333EA!important}
 .evc-ft .btn.bc{opacity:1;padding:14px 32px;font-size:1.12rem;color:#064E3B!important;background:#FBBF24!important;border:2px solid #FBBF24!important}
 .evc-ft .btn.bc:hover{color:#064E3B!important;background:#F59E0B!important;border-color:#F59E0B!important}
 .evc-ft span{color:#064E3B!important}
