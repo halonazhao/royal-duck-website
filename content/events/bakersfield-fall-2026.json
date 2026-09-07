@@ -1,0 +1,37 @@
+{
+  "hoursNote": {
+    "en": "",
+    "es": ""
+  },
+  "start": "2026-10-03T10:00",
+  "eventKey": "bakersfield-fall-2026",
+  "lng": -119.034,
+  "emoji": "🛒",
+  "announcement": {
+    "en": "",
+    "es": ""
+  },
+  "theme": "san-antonio",
+  "city": "Bakersfield",
+  "waiverUrl": "",
+  "glow": "var(--teal)",
+  "venue": "Valley Plaza",
+  "hours": {
+    "en": "WEEKDAYS 3:00PM - 8:00PM\nWEEKENDS 10AM - 8:00PM",
+    "es": ""
+  },
+  "status": "published",
+  "region": "California",
+  "address": "2701 Ming Ave, Bakersfield, CA",
+  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/2c9edb26-f682-4fad-4a97-743454e22e00/public",
+  "timeZone": "America/Los_Angeles",
+  "booking": {
+    "enabled": true,
+    "host": "royalduck.checkfront.com",
+    "categoryId": "60",
+    "startDate": "",
+    "options": "tabs"
+  },
+  "end": "2026-11-02T20:00",
+  "lat": 35.337997
+}
