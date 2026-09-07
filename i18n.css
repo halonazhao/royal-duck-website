@@ -1,0 +1,296 @@
+/*
+ * Lang switch sits in document flow beside Buy Tickets (.n-links) or on standalone bars (.nav-inner).
+ */
+
+/* Pill row — same vertical band as adjacent nav links */
+ul.n-links > li.rd-lang-li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/*
+ * Home: other .n-links > li stay opacity:0 until GSAP reveals them. Changing language destroys
+ * and re-injects this <li>; it never enters the timeline, so it would stay invisible without this.
+ */
+body.site-home ul.n-links > li.rd-lang-li {
+  opacity: 1 !important;
+}
+
+ul.n-links li.rd-lang-li .rd-lang-switch {
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo-only standalone: aligns with ☰ column (navigation.css grids); keep bar height tidy */
+body.nav-logo-only .nav-inner {
+  gap: 0 8px;
+}
+
+body.nav-logo-only .nav-inner .rd-lang-switch {
+  align-self: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  /* Narrow bar beside ☰: left side, slight vertical nudge (was margin-left:auto = flush right). */
+  body.nav-logo-only .nav-inner .rd-lang-switch {
+    margin-left: 0;
+    margin-right: auto;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Full-screen drawer: hug left + sit a touch below nav padding */
+  body.nav-mobile-menu-open #mainNav ul.n-links.open > li.rd-lang-li {
+    align-self: flex-start;
+    width: auto;
+    margin-left: max(10px, env(safe-area-inset-left, 0px));
+    padding-top: 8px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.nav-logo-only:not(.nav-subpage-compact) .nav-inner .rd-lang-switch {
+    margin-left: 10px;
+  }
+
+  body.nav-logo-only.nav-subpage-compact .nav-inner .rd-lang-switch {
+    margin-right: max(10px, env(safe-area-inset-right));
+  }
+}
+
+.rd-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fffef5 0%, #fff 45%, #f8fafc 100%);
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  box-shadow:
+    0 2px 0 rgba(15, 23, 42, 0.06),
+    0 4px 12px rgba(11, 22, 40, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.rd-lang-btn {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  min-width: 34px;
+  min-height: 30px;
+  padding: 5px 8px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(212, 168, 0, 0.7);
+  background: linear-gradient(180deg, #ffeb3b 0%, #ffcc00 55%, #f5bf00 100%);
+  color: #1a1200;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    border-color 0.15s ease,
+    transform 0.12s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+  box-shadow: 0 2px 0 #c9a008, inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+.rd-lang-btn:hover {
+  filter: brightness(1.05);
+  border-color: rgba(251, 191, 36, 1);
+}
+
+.rd-lang-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #c9a008, inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.rd-lang-btn:focus-visible {
+  outline: 2px solid #00b894;
+  outline-offset: 1px;
+}
+
+.rd-lang-btn.is-active {
+  border-color: rgba(11, 22, 40, 0.5);
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #fefce8;
+  text-shadow: none;
+  box-shadow:
+    inset 0 1px 4px rgba(0, 0, 0, 0.32),
+    0 1px 0 rgba(148, 163, 184, 0.22);
+}
+
+.rd-lang-btn.is-active:hover {
+  filter: brightness(1.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rd-lang-btn {
+    transition: none;
+  }
+  .rd-lang-btn:active {
+    transform: none;
+  }
+}
+
+/* ============================================================
+ * Country / region switch — flag links to the two country sites.
+ * Sits beside the language switch in the nav pill (home page).
+ * ============================================================ */
+
+/* Fixed strip pinned to the very top, above the (also-fixed) nav bar. */
+.rd-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001; /* above nav (1000) */
+  display: flex;
+  justify-content: flex-end;
+  /* Pulled in from the edges so the pill isn't hugging the corner. */
+  padding:
+    max(14px, calc(env(safe-area-inset-top) + 12px)) max(24px, calc(env(safe-area-inset-right) + 14px))
+    0 max(24px, calc(env(safe-area-inset-left) + 14px));
+  pointer-events: none; /* let clicks fall through the empty strip… */
+}
+
+.rd-topbar .rd-region-switch {
+  pointer-events: auto; /* …but keep the pill interactive */
+}
+
+/* Mobile: nav hamburger lives top-right, so move flags to the top-left. Hug the
+   left edge (and tuck up) so the pill clears the centered logo. */
+@media (max-width: 900px) {
+  .rd-topbar {
+    justify-content: flex-start;
+    padding:
+      max(8px, env(safe-area-inset-top)) 0
+      0 max(6px, env(safe-area-inset-left));
+  }
+}
+
+.rd-region-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 6px;
+
+  border-radius: 999px;
+  /* Dark, translucent slate pill (matches mockup) — not white. */
+  background: linear-gradient(180deg, rgba(51, 65, 85, 0.62) 0%, rgba(30, 41, 59, 0.62) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 6px 18px rgba(11, 22, 40, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.rd-region-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 4px 10px;
+
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  /* Animate only compositor-friendly props for smooth 60fps hover. */
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    filter 0.15s ease;
+}
+
+.rd-region-flag img {
+  display: block;
+  width: 22px;
+  height: 15px;
+  border-radius: 3px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.rd-region-code {
+  color: inherit;
+}
+
+/* Inactive flag: slightly muted so the selected one reads as active. */
+.rd-region-flag:not(.is-active) {
+  opacity: 0.72;
+}
+
+.rd-region-flag:not(.is-active):hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Selected country — darker translucent "chip" recessed into the track, light text. */
+.rd-region-flag.is-active {
+  background: rgba(15, 23, 42, 0.55);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.45),
+    0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.rd-region-flag.is-active img {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.rd-region-flag.is-active:hover {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.rd-region-flag:active {
+  transform: translateY(0);
+}
+
+.rd-region-flag:focus-visible {
+  outline: 2px solid #00b894;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rd-region-flag {
+    transition: none;
+  }
+  .rd-region-flag:hover,
+  .rd-region-flag.is-active:hover,
+  .rd-region-flag:active {
+    transform: none;
+  }
+}

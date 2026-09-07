@@ -1,0 +1,5 @@
+# The Royal Duck — update Sitemap URL if your live domain differs
+User-agent: *
+Allow: /
+
+Sitemap: https://www.royalduckusa.com/sitemap.xml

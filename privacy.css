@@ -1,0 +1,83 @@
+/* Standalone Privacy Policy page */
+.privacy-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e3f2fd 0%, #f3e5f5 50%, #fff8e1 100%);
+  color: #1a237e;
+  font-family: 'Nunito', sans-serif;
+  padding: 24px 16px 80px;
+}
+
+body.nav-logo-only .privacy-page {
+  padding-top: calc(env(safe-area-inset-top, 0px) + clamp(10.5rem, 21vh, 13rem));
+}
+
+@media (max-width: 1024px) {
+  body.nav-logo-only .privacy-page {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 52px);
+  }
+}
+.privacy-page-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.privacy-page h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: #0b1628;
+  margin-bottom: 8px;
+}
+.privacy-page h1.policy-page-title {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: clamp(1.5rem, 3.8vw, 2rem);
+}
+.privacy-page .privacy-meta {
+  font-size: 0.85rem;
+  color: rgba(26, 35, 126, 0.65);
+  margin-bottom: 28px;
+}
+.privacy-lang-note:empty {
+  display: none;
+}
+.privacy-lang-note:not(:empty) {
+  font-size: 0.9rem;
+  color: rgba(26, 35, 126, 0.75);
+  margin: -18px 0 20px;
+  line-height: 1.45;
+}
+.privacy-page .policy-shout {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #0b1628;
+  margin-bottom: 20px;
+}
+.privacy-page h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.2rem;
+  color: #00b894;
+  margin: 28px 0 12px;
+}
+.privacy-page p,
+.privacy-page li {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(26, 35, 126, 0.88);
+  margin-bottom: 12px;
+}
+.privacy-page ul {
+  margin: 0 0 16px 1.25rem;
+  padding: 0;
+}
+.privacy-page a {
+  color: #00b894;
+  font-weight: 700;
+}
+.privacy-page .privacy-disclaimer {
+  margin-top: 32px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 184, 148, 0.25);
+  font-size: 0.88rem;
+  color: rgba(26, 35, 126, 0.75);
+}

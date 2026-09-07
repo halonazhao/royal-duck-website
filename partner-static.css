@@ -1,0 +1,94 @@
+/* Standalone Affiliate & Vendors pages */
+.partner-static-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e8f4fc 0%, #f3e8ff 45%, #fff8e7 100%);
+  color: #1a237e;
+  font-family: 'Nunito', sans-serif;
+  padding: 24px 16px 80px;
+  padding-top: max(24px, env(safe-area-inset-top));
+}
+
+/* Affiliate: extra top when wordmark lived in fixed nav (non–sub-compact only) */
+body.affiliate-page:not(.nav-subpage-compact) .partner-static-page {
+  padding-top: calc(env(safe-area-inset-top, 0px) + clamp(10.5rem, 21vh, 13rem));
+}
+
+@media (max-width: 1024px) {
+  body.affiliate-page.nav-logo-only:not(.nav-subpage-compact) .partner-static-page {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 52px);
+  }
+
+  body.affiliate-page.nav-logo-only.nav-subpage-compact .partner-static-page {
+    padding-top: max(12px, env(safe-area-inset-top, 0px));
+  }
+}
+
+@media (min-width: 1025px) {
+  body.affiliate-page.nav-logo-only.nav-subpage-compact .partner-static-page {
+    padding-top: max(16px, env(safe-area-inset-top, 0px));
+  }
+}
+.partner-static-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.partner-static-page h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  color: #0b1628;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.partner-static-page .partner-lead {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: rgba(26, 35, 126, 0.88);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.partner-static-page h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.25rem;
+  color: #00b894;
+  margin: 28px 0 12px;
+}
+.partner-static-page p,
+.partner-static-page li {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(26, 35, 126, 0.88);
+  margin-bottom: 12px;
+}
+.partner-static-page ul {
+  margin: 0 0 16px 1.25rem;
+  padding: 0;
+}
+.partner-static-page a.partner-link {
+  color: #00b894;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.partner-static-page a.partner-link:hover {
+  color: #00796b;
+}
+.partner-static-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 184, 148, 0.2);
+  font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 14px;
+  color: rgba(26, 35, 126, 0.75);
+}
+.partner-static-footer a {
+  color: #00b894;
+  font-weight: 700;
+}
+.partner-static-main {
+  position: relative;
+  z-index: 1;
+}

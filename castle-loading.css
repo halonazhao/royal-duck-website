@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(145deg, #87CEEB 0%, #E0F7FA 35%, #FFF9C4 70%, #FFCCBC 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stage keeps 16:10 aspect ratio and scales to fit viewport */
+.stage {
+  position: relative;
+  width: min(100vw, 100vh * 16 / 10);
+  height: min(100vh, 100vw * 10 / 16);
+  transform-origin: center center;
+}
+
+.piece {
+  position: absolute;
+  will-change: transform, opacity;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,0.35));
+  transform-origin: 50% 80%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* sizes relative to stage (percentages) */
+#platform { width: 50%; }
+#slide    { width: 44%; }
+#towerL, #towerR { width: 22%; }
+#robotB, #robotP { width: 15%; }
+
+/* layering to match the reference (towers behind, slide mid, robots front) */
+#platform { z-index: 1; }
+#towerL { z-index: 2; }
+#slide { z-index: 3; }
+#towerR { z-index: 4; }
+#robotB, #robotP { z-index: 5; }
+
+.groundGlow {
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  transform: translateX(-50%);
+  width: 86%;
+  height: 18%;
+  background: radial-gradient(ellipse at center, rgba(255,183,77,0.4), rgba(255,224,130,0.2) 50%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 转场遮罩：淡入淡出转场时覆盖画面 */
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(145deg, #B3E5FC 0%, #E1F5FE 50%, #FFF8E1 100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}

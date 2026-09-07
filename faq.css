@@ -1,0 +1,26 @@
+/* ===== FAQ ===== */
+.faq-sec{background:linear-gradient(180deg,#7afff8 0%,#5ee8e0 50%,#7afff8 100%);position:relative}
+.faq-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.15),transparent 65%);pointer-events:none}
+.faq-list{max-width:740px;margin:40px auto 0}
+.faq-item{border-bottom:1px solid rgba(6,78,59,.2);overflow:hidden}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;gap:16px;user-select:none}
+.faq-q h4{font-size:1.05rem;font-weight:700;transition:color .3s}
+.faq-q:hover h4{color:var(--teal)}
+.faq-arrow{font-size:1.2rem;transition:transform .3s;flex-shrink:0;color:var(--soft)}
+.faq-item.open .faq-arrow{transform:rotate(180deg);color:var(--teal)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s;padding:0 0}
+.faq-item.open .faq-a{padding:0 0 20px}
+.faq-a p{color:var(--soft);font-weight:600;line-height:1.7;font-size:.92rem}
+.faq-a ul{color:var(--soft);font-weight:600;line-height:1.8;font-size:.9rem;padding-left:20px;margin-top:6px}
+
+/* ===== VOLUNTEER FAQ (home, after main FAQ) — same accordion, #ffe6f1 like volunteer.html ===== */
+.volunteer-faq-sec{background:#ffe6f1;position:relative}
+.volunteer-faq-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 18%,rgba(255,255,255,.22),transparent 58%);pointer-events:none}
+.volunteer-faq-sec .sw{position:relative;z-index:1}
+.volunteer-faq-sec .volunteer-faq-intro{max-width:44rem;margin:0 auto;text-align:left}
+.volunteer-faq-sec .volunteer-faq-intro .sd{max-width:none;margin-bottom:1.05em;text-align:left}
+.volunteer-faq-sec .volunteer-faq-intro .sd:last-child{margin-bottom:0}
+.volunteer-faq-sec .volunteer-faq-intro .sd strong{color:var(--text,#1a237e);font-weight:800}
+.volunteer-faq-sec .faq-list{margin:40px auto 0}
+.volunteer-faq-cta{margin-top:36px;text-align:center}
+.volunteer-faq-cta .btn{opacity:1}

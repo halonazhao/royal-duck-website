@@ -1,0 +1,264 @@
+/* ===== VOLUNTEER PAGE ===== */
+.volunteer-sec {
+  background: #ffe6f1;
+  position: relative;
+  overflow: hidden;
+  padding: 96px 24px 72px;
+  box-sizing: border-box;
+}
+
+body.volunteer-page.nav-logo-only .volunteer-sec {
+  padding-top: calc(96px + 1.5rem);
+}
+
+body.volunteer-page.nav-logo-only.nav-subpage-compact .volunteer-sec {
+  padding-top: 20px;
+}
+.volunteer-sec::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 18%, rgba(255, 255, 255, 0.22), transparent 58%);
+  pointer-events: none;
+}
+.volunteer-sec .sw {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+.volunteer-sec .ct {
+  text-align: center;
+}
+.volunteer-sec .ct .sh {
+  font-size: clamp(1.65rem, 5.5vw, 2.75rem);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.volunteer-sec .ct .sh .volunteer-sh-sub {
+  display: block;
+  margin-top: 0.18em;
+  color: var(--coral, #ff6b6b);
+  line-height: 1.2;
+}
+.volunteer-sec .ct .sd {
+  font-size: clamp(0.92rem, 3.3vw, 1.05rem);
+  line-height: 1.65;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 4px;
+  color: var(--soft, rgba(26, 35, 126, 0.78));
+  font-weight: 600;
+}
+
+/* ——— Volunteer form ——— */
+.volunteer-form {
+  max-width: 520px;
+  margin: 36px auto 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 20px;
+  padding: 28px 26px 32px;
+  box-shadow: 0 8px 32px rgba(136, 19, 55, 0.1), 0 2px 0 rgba(255, 255, 255, 0.85) inset;
+  border: 1px solid rgba(255, 107, 107, 0.14);
+  box-sizing: border-box;
+}
+.volunteer-form-intro {
+  text-align: center;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--soft, rgba(26, 35, 126, 0.78));
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+.vol-field {
+  margin-bottom: 20px;
+}
+.vol-field:last-of-type {
+  margin-bottom: 0;
+}
+.volunteer-form label {
+  display: block;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #064e3b;
+  margin-bottom: 6px;
+  text-align: left;
+}
+.vol-req {
+  color: var(--coral, #ff6b6b);
+  font-weight: 800;
+}
+.vol-hint {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--soft, rgba(26, 35, 126, 0.72));
+  margin: -2px 0 8px;
+  line-height: 1.4;
+}
+.volunteer-form input[type='text'],
+.volunteer-form input[type='tel'],
+.volunteer-form input[type='email'],
+.volunteer-form select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 2px solid rgba(6, 78, 59, 0.25);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text, #1a237e);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  min-height: 50px;
+}
+.volunteer-form select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23064E3B' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+.volunteer-form input::placeholder {
+  color: rgba(26, 35, 126, 0.45);
+  font-weight: 500;
+}
+.volunteer-form input:focus,
+.volunteer-form select:focus {
+  border-color: var(--teal, #00b894);
+  box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.2);
+}
+.volunteer-form-footnote {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--soft, rgba(26, 35, 126, 0.7));
+  line-height: 1.5;
+  margin-top: 22px;
+  margin-bottom: 0;
+  text-align: left;
+}
+.volunteer-form-status {
+  margin-top: 1.25rem;
+  padding: 14px 20px;
+  border-radius: 16px;
+  font-size: 1rem;
+  line-height: 1.45;
+  text-align: center;
+  background: rgba(26, 35, 126, 0.08);
+  color: var(--text, #1a237e);
+  border: 2px solid rgba(26, 35, 126, 0.2);
+}
+
+.volunteer-form-status[hidden] {
+  display: none;
+}
+
+.volunteer-form-actions {
+  margin-top: 24px;
+  text-align: center;
+}
+.volunteer-form-actions .btn {
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .volunteer-sec {
+    padding: 84px 18px 56px;
+  }
+  .volunteer-form {
+    margin-top: 28px;
+    padding: 24px 20px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .volunteer-sec {
+    padding: 76px 14px 44px;
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+  }
+  .volunteer-form {
+    margin-top: 24px;
+    padding: 22px 16px 26px;
+    border-radius: 16px;
+  }
+  .volunteer-form-intro {
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+  }
+  .vol-field {
+    margin-bottom: 16px;
+  }
+  .volunteer-form input[type='text'],
+  .volunteer-form input[type='tel'],
+  .volunteer-form input[type='email'],
+  .volunteer-form select {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    min-height: 48px;
+    border-radius: 12px;
+  }
+  .volunteer-form-actions .btn {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* ≤1024: nav has wordmark hidden — bar is ☰ only (see navigation.css) */
+@media (max-width: 1024px) {
+  body.volunteer-page.nav-logo-only .volunteer-sec {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 52px);
+  }
+
+  body.volunteer-page.nav-logo-only.nav-subpage-compact .volunteer-sec {
+    padding-top: max(12px, env(safe-area-inset-top, 0px));
+  }
+}
+
+/* Footer */
+.volunteer-page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  text-align: center;
+  padding: 28px 24px 40px;
+  padding-bottom: max(40px, env(safe-area-inset-bottom));
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--soft, rgba(26, 35, 126, 0.78));
+}
+.volunteer-page-footer a {
+  color: var(--teal, #00b894);
+  font-weight: 700;
+}
+.volunteer-page-footer a:hover {
+  text-decoration: underline;
+}
+.volunteer-page-footer span {
+  opacity: 0.6;
+  margin: 0 0.35em;
+}
+@media (max-width: 380px) {
+  .volunteer-page-footer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px 16px 36px;
+    font-size: 0.88rem;
+  }
+  .volunteer-page-footer span {
+    display: none;
+  }
+}

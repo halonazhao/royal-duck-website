@@ -1,0 +1,443 @@
+/* Bubbleboddy Neue ExtraBold — add file(s) to assets/fonts/ (see README there) */
+@font-face {
+  font-family: 'Bubbleboddy Neue';
+  src: url('assets/fonts/BubbleboddyNeue-ExtraBold.woff2') format('woff2'),
+    url('assets/fonts/BubbleboddyNeue-ExtraBold.woff') format('woff'),
+    url('assets/fonts/BubbleboddyNeue-ExtraBold.ttf') format('truetype'),
+    url('assets/BubbleboddyNeue-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Hero – Cloudflare Images background; centered video frame + headline (see home.html) */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 24px 70px;
+  overflow: visible;
+  background-color: #93c5fd;
+  background-image: url('https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/7b51e920-5cad-43c3-54d6-dcd74dbbf400/public');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Frame centered, no rotation, width double */
+.hero-frame {
+  position: absolute;
+  left: 50%;
+  /* Slightly above vertical center so a taller frame doesn’t crowd the bottom */
+  top: 47%;
+  /* +5px: nudge down for breathing room vs content above/below the frame */
+  transform: translate(-50%, calc(-50% + 5px));
+  width: min(124vmin, 820px);
+  height: min(82vmin, 530px);
+  border: 5px solid #fff;
+  background: #fff;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Laptop: frame a touch lower than center, but not hugging the bottom */
+@media (min-width: 901px) and (max-width: 1536px) {
+  .hero-frame {
+    top: 56%;
+  }
+
+  .hero-blue-wrap {
+    transform: translateY(min(9vh, 110px));
+  }
+}
+
+/* Darken only the video area (inside frame), not the full hero */
+.hero-frame .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+.hero-frame-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+  transition: opacity 0.5s ease-out;
+}
+.hero-frame-poster.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.hero-frame-stream {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  background: #fff;
+  /* Size queries so iframe can “cover” like object-fit: cover for 16:9 Stream */
+  container-type: size;
+  container-name: hero-stream;
+}
+/* 16:9 “cover” inside frame; matches tall frames (e.g. hero) when @container unsupported */
+.hero-frame-stream iframe {
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  aspect-ratio: 16 / 9;
+}
+/* Frame wider than 16:9 → fill width, extend height past frame (cropped) */
+@container hero-stream (min-aspect-ratio: 16 / 9) {
+  .hero-frame-stream iframe {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+/* Frame taller than 16:9 → fill height, extend width past frame (cropped) */
+@container hero-stream (max-aspect-ratio: 16 / 9) {
+  .hero-frame-stream iframe {
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+/* Abstract background blobs */
+.hero-blobs-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero-blob--red {
+  width: min(65vw, 620px);
+  height: min(65vw, 620px);
+  top: -15%;
+  left: -10%;
+  background: #FF4D4D;
+  opacity: 1;
+}
+
+.hero-blob--yellow {
+  width: min(75vw, 720px);
+  height: min(85vw, 800px);
+  top: -20%;
+  right: -15%;
+  background: #FFCC00;
+  opacity: 1;
+  border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+}
+
+.hero-blob--purple {
+  width: min(52vw, 500px);
+  height: min(52vw, 500px);
+  bottom: -5%;
+  right: -5%;
+  background: #800080;
+  opacity: 1;
+}
+
+.hero-blob--dot {
+  width: 48px;
+  height: 48px;
+  bottom: 28%;
+  left: 50%;
+  background: #FF4D4D;
+  opacity: 0.8;
+  transform: translateX(-50%);
+}
+
+.hero-blob--teal {
+  width: min(58vw, 540px);
+  height: min(58vw, 540px);
+  top: 40%;
+  left: -8%;
+  background: #00B894;
+  opacity: 1;
+  border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
+}
+
+.hero-blob--coral {
+  width: min(42vw, 400px);
+  height: min(42vw, 400px);
+  top: 15%;
+  right: 25%;
+  background: #FF6B6B;
+  opacity: 1;
+  border-radius: 40% 60% 55% 45% / 60% 40% 50% 50%;
+}
+
+.hero-blob--lavender {
+  width: min(48vw, 460px);
+  height: min(48vw, 460px);
+  bottom: 15%;
+  left: 15%;
+  background: #A78BFA;
+  opacity: 1;
+  border-radius: 60% 40% 45% 55% / 50% 50% 50% 50%;
+}
+
+.hero-blob--mint {
+  width: min(38vw, 360px);
+  height: min(38vw, 360px);
+  top: 60%;
+  right: 20%;
+  background: #7DFFC7;
+  opacity: 0.4;
+  border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%;
+}
+
+.hero-blob--peach {
+  width: min(45vw, 420px);
+  height: min(45vw, 420px);
+  bottom: -10%;
+  left: 35%;
+  background: #FFAB91;
+  opacity: 0.35;
+  border-radius: 45% 55% 60% 40% / 50% 60% 40% 50%;
+}
+
+.hero-blob--sky {
+  width: min(35vw, 340px);
+  height: min(35vw, 340px);
+  top: 25%;
+  left: 30%;
+  background: #56CCF2;
+  opacity: 1;
+  border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
+}
+
+.hero-blob--dot2 {
+  width: 40px;
+  height: 40px;
+  top: 70%;
+  right: 35%;
+  background: #FFCC00;
+  opacity: 0.7;
+}
+
+.hero-blob--dot3 {
+  width: 32px;
+  height: 32px;
+  top: 20%;
+  left: 55%;
+  background: #00B894;
+  opacity: 0.6;
+}
+
+/* Blue blob + content wrapper */
+.hero-blue-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 420px;
+  z-index: 2;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SVG blue blob with circular cutout */
+.hero-blue-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+}
+
+/* Circular image (castle.png) in the cutout */
+.hero-circle-img {
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  width: min(42%, 380px);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2), 0 0 0 4px rgba(30, 64, 255, 0.15);
+  background: #f0f0f0;
+}
+
+.hero-circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  vertical-align: middle;
+}
+
+/* Headline + CTAs — centered */
+.hero .h-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: min(900px, 94vw);
+  margin: 0 auto;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Bubbleboddy Neue', 'Baloo 2', cursive;
+  font-size: clamp(2.2rem, 5.2vw, 3.6rem);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* One unit per word after hero.js split — lines break between words, not mid-word */
+.hero h1 .h1-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero h1 .ch {
+  display: inline-block;
+  opacity: 0;
+}
+
+.hero .hl-t {
+  color: #FFFFFF;
+}
+
+.hero .h-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.hero-btn--red {
+  background: #FF4D4D !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 0 #cc3d3d, 0 6px 20px rgba(255, 77, 77, 0.4) !important;
+  opacity: 0;
+}
+
+.hero-btn--red:hover {
+  box-shadow: 0 6px 0 #cc3d3d, 0 8px 24px rgba(255, 77, 77, 0.5) !important;
+}
+
+.hero-btn--yellow {
+  background: #FFCC00 !important;
+  color: #1a1a1a !important;
+  border: none !important;
+  box-shadow: 0 4px 0 #d4a800, 0 6px 20px rgba(255, 204, 0, 0.4) !important;
+  opacity: 0;
+}
+
+.hero-btn--yellow:hover {
+  box-shadow: 0 6px 0 #d4a800, 0 8px 24px rgba(255, 204, 0, 0.5) !important;
+}
+
+.sea-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sea-shape {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 120px 16px 40px;
+  }
+
+  .hero-frame {
+    top: 45%;
+  }
+
+  .hero-blue-wrap {
+    min-height: 320px;
+  }
+
+  .hero .h-content {
+    max-width: 100%;
+    padding: 32px 20px 24px;
+    text-align: center;
+  }
+
+  .hero .h-btns {
+    justify-content: center;
+  }
+
+  .hero-circle-img {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: min(280px, 75vw);
+    margin: 0 auto 24px;
+    order: -1;
+  }
+
+  .hero-blue-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Keep blob + circle usable on small screens: stack content above circle */
+@media (max-width: 900px) {
+  .hero-blue-svg {
+    min-height: 240px;
+  }
+
+  .hero-circle-img {
+    margin-bottom: 20px;
+  }
+}

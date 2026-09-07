@@ -1,0 +1,36 @@
+/* ===== WHAT IS (ABOUT) ===== */
+.about-sec{background-color:#C4B5FD;background-image:none;background-size:cover;background-position:center;background-repeat:no-repeat;position:relative;min-height:100vh;padding:72px 24px 56px}
+/* Wide desktop only: texture image (laptop/tablet/phone use solid purple) */
+@media (min-width:1537px){
+.about-sec{background-image:url(assets/purple_back.png)}
+}
+.about-sec::before{content:'';position:absolute;inset:0;pointer-events:none}
+.about-sec .sw{position:relative;z-index:51;max-width:1220px}
+.about-sec .ct .sh{margin-bottom:6px}
+.about-sec .ct .sd{margin-bottom:0}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));justify-content:center;justify-items:center;gap:28px 32px;max-width:1200px;margin:24px auto 0;
+  perspective:1200px}
+.acard{background:transparent;border:none;border-radius:20px;padding:20px 16px;text-align:center;
+  width:100%;max-width:540px;min-width:300px;position:relative;overflow:visible;transition:box-shadow .4s;cursor:default;
+  box-shadow:none;display:flex;flex-direction:column;min-height:240px;transform-style:preserve-3d;will-change:transform}
+.acard:hover{box-shadow:none}
+.acard::before{content:'';position:absolute;inset:-1px;border-radius:20px;padding:1px;
+  background:linear-gradient(135deg,transparent 50%,rgba(168,85,247,.08));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
+.acard:hover::before{opacity:1}
+.ac-icon{
+  font-size:6rem;margin-bottom:8px;display:flex;justify-content:center;align-items:center;
+  min-height:13.5rem;
+  filter:drop-shadow(0 0 7px rgba(168,85,247,.2))
+}
+
+/* All three feature icons share one size so cards stay aligned */
+.ac-icon-img{width:13rem;height:13rem;object-fit:contain;display:block}
+.ac-icon-img--castle{width:13rem;height:13rem}
+.ac-icon-img--music{width:13rem;height:13rem}
+.acard h3{font-size:1.45rem;font-weight:800;margin-bottom:4px;color:#064E3B;font-family:'Baloo 2',cursive;line-height:1.1}
+.acard p{color:#064E3B;font-weight:600;line-height:1.55;font-size:.88rem;margin:0}
+.ac-glow{position:absolute;width:140px;height:140px;border-radius:50%;filter:blur(55px);opacity:0;transition:opacity .4s;bottom:-45px;right:-45px}
+.acard:hover .ac-glow{opacity:.12}
+
