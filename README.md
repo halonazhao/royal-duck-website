@@ -1,6 +1,6 @@
 # Royal Duck website and event admin
 
-The public website remains static. Staff edit JSON event records with Decap CMS, save drafts to GitHub, and review automatically deployed staging previews. Only Halona can trigger the production publication workflow from the protected `main` branch.
+The public website remains static. Once account setup is complete, staff edit JSON event records with Decap CMS, save drafts to GitHub, and review automatically deployed staging previews. Only Halona can trigger the production publication workflow from the protected `main` branch. See [SETUP-STATUS.md](SETUP-STATUS.md) for the exact activated and pending pieces; login, branch protection, and automatic deployment credentials are not yet connected.
 
 ## Locations
 
