@@ -1,0 +1,19 @@
+{
+  "name": "royal-duck-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "dev": "npm run build && wrangler dev --config wrangler.staging.jsonc --port 8788",
+    "deploy:staging": "npm run build && node scripts/deploy.mjs staging"
+  },
+  "devDependencies": {
+    "jsdom": "30.0.1",
+    "wrangler": "4.129.1"
+  }
+}

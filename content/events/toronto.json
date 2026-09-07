@@ -1,0 +1,37 @@
+{
+  "eventKey": "toronto",
+  "city": "Toronto",
+  "region": "Ontario",
+  "emoji": "🍁",
+  "venue": "Harbourfront Centre",
+  "timeZone": "America/Toronto",
+  "lat": 43.6419,
+  "lng": -79.3794,
+  "address": "235 Queens Quay W, Toronto, ON",
+  "start": "2026-02-14T10:00",
+  "end": "2026-02-16T17:00",
+  "waiverUrl": "",
+  "glow": "var(--teal)",
+  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/72a4f8e0-21fc-4e7a-5664-812828de4000/public",
+  "status": "published",
+  "theme": "default",
+  "hours": {
+    "en": "WEEKDAYS NOON - 8:00PM\nWEEKENDS 10AM - 8:00PM",
+    "es": "ENTRE SEMANA MEDIODÍA - 8:00 p. m.\nFINES DE SEMANA 10 a. m. - 8:00 p. m."
+  },
+  "hoursNote": {
+    "en": "",
+    "es": ""
+  },
+  "announcement": {
+    "en": "Valentine's Day Weekend Special 💕",
+    "es": ""
+  },
+  "booking": {
+    "enabled": false,
+    "host": "royalduck.checkfront.com",
+    "categoryId": "",
+    "startDate": "",
+    "options": "tabs"
+  }
+}

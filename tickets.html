@@ -233,11 +233,10 @@
     }
     var locationButtons = allEvents.filter(function(ev) {
       var st = window.getEventStatus ? window.getEventStatus(ev) : 'ended';
-      return st === 'live' || st === 'upcoming';
+      return ev.booking && ev.booking.enabled && (st === 'live' || st === 'upcoming');
     }).map(function(ev) {
       return { key: ev.eventKey, label: tixButtonLabel(ev) };
     });
-    if (!locationButtons.length) locationButtons = [{ key: 'deerbrook', label: 'Humble / Houston, Texas' }];
     locationButtons.unshift({
       key: 'all',
       label: window.I18n && window.I18n.t ? window.I18n.t('tickets.loc_all') : 'All'

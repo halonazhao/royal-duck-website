@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "little-river-fc26",
+  "account_id": "ebc0b4333cda21b22deca8e42ad8a56d",
+  "main": "worker/index.mjs",
+  "compatibility_date": "2026-09-04",
+  "workers_dev": true,
+  "preview_urls": true,
+  "keep_vars": true,
+  "assets": { "directory": "./dist", "binding": "ASSETS", "html_handling": "auto-trailing-slash", "not_found_handling": "none", "run_worker_first": true },
+  "vars": { "SITE_ENV": "staging", "ADMIN_ORIGIN": "https://little-river-fc26.halona-zhao.workers.dev", "GITHUB_REPOSITORY": "halonazhao/royal-duck-website" }
+}

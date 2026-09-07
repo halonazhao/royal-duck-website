@@ -210,22 +210,6 @@
       'aff.touch_body_html':
         'Reach us through the <a class="partner-link" href="home.html#contact">Contact</a> section on our homepage, or connect via <a class="partner-link" href="https://www.instagram.com/theroyalduckbh" target="_blank" rel="noopener noreferrer">Instagram</a> and <a class="partner-link" href="https://www.facebook.com/profile.php?id=61581698462349" target="_blank" rel="noopener noreferrer">Facebook</a>.',
 
-      'hours.westshore': 'WEEKDAYS 3:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM',
-      'hours.vancouvermall': 'WEEKDAYS 11AM - 9:00PM<br>WEEKENDS 10AM - 9:00PM',
-      'hours.southcenter': 'WEEKDAYS 11AM - 8:30PM<br>WEEKENDS 10AM - 8:30PM',
-      'hours.deerbrook': 'WEEKDAYS 2:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM',
-      'hours.oaklandmall': 'MON - THU 3:00PM - 9:00PM<br>FRI, SAT, SUN 10AM - 9:00PM',
-      'hours.forestplaza': 'MON - THU 2:00PM - 8:00PM<br>FRI, SAT, SUN 10AM - 8:00PM',
-      'hours.woodfield': 'WEEKDAYS 2:00PM - 8:30PM<br>WEEKENDS &amp; HOLIDAYS 10AM - 8:30PM',
-      'hours.foxriver': 'WEEKDAYS 3:00PM - 8:30PM<br>WEEKENDS 10AM - 8:30PM',
-      'hours.sa': 'WEEKDAYS 2:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM',
-      'hours.greensboro': 'WEEKDAYS 2:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM',
-      'hours.mayfair': 'MON, THU, FRI 2:00PM - 8:00PM<br>TUE &amp; WED CLOSED<br>SAT, SUN 10:00AM - 8:00PM',
-      'hours.mainplace': 'MON - THU 3:00PM - 8:00PM<br>FRI - SUN &amp; HOLIDAYS 10:00AM - 9:00PM',
-      'hours.mainplace_note': 'Adult Night Session Available',
-      'hours.edisonmall': 'WEEKDAYS 3:00PM - 7:00PM<br>WEEKENDS 10AM - 7:00PM',
-      'hours.afternoon_evening': 'WEEKDAYS 3:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM',
-      'hours.default': 'WEEKDAYS NOON - 8:00PM<br>WEEKENDS 10AM - 8:00PM',
 
       'vendor.meta.title': 'Apply for the Royal Vibe – Vendors & Food | The Royal Duck',
       'vendor.meta.desc':
@@ -477,22 +461,6 @@
       'aff.touch_body_html':
         'Escríbenos desde <a class="partner-link" href="home.html#contact">Contacto</a> en la página principal o por <a class="partner-link" href="https://www.instagram.com/theroyalduckbh" target="_blank" rel="noopener noreferrer">Instagram</a> y <a class="partner-link" href="https://www.facebook.com/profile.php?id=61581698462349" target="_blank" rel="noopener noreferrer">Facebook</a>.',
 
-      'hours.westshore': 'ENTRE SEMANA 3:00 p. m. - 8:00 p. m.<br>FINES DE SEMANA 10 a. m. - 8:00 p. m.',
-      'hours.vancouvermall': 'ENTRE SEMANA 11 a. m. - 9:00 p. m.<br>FINES DE SEMANA 10 a. m. - 9:00 p. m.',
-      'hours.southcenter': 'ENTRE SEMANA 11 a. m. - 8:30 p. m.<br>FINES DE SEMANA 10 a. m. - 8:30 p. m.',
-      'hours.deerbrook': 'ENTRE SEMANA 2:00 p. m. - 8:00 p. m.<br>FINES DE SEMANA 10 a. m. - 8:00 p. m.',
-      'hours.oaklandmall': 'LUN A JUE 3:00 p. m. - 9:00 p. m.<br>VIE, SÁB, DOM 10 a. m. - 9:00 p. m.',
-      'hours.forestplaza': 'LUN A JUE 2:00 p. m. - 8:00 p. m.<br>VIE, SÁB, DOM 10 a. m. - 8:00 p. m.',
-      'hours.woodfield': 'ENTRE SEMANA 2:00 p. m. - 8:30 p. m.<br>FINES DE SEMANA Y FERIADOS 10 a. m. - 8:30 p. m.',
-      'hours.foxriver': 'ENTRE SEMANA 3:00 p. m. - 8:30 p. m.<br>FINES DE SEMANA 10 a. m. - 8:30 p. m.',
-      'hours.sa': 'ENTRE SEMANA 2:00 p. m. - 8:00 p. m.<br>FINES DE SEMANA 10 a. m. - 8:00 p. m.',
-      'hours.greensboro': 'ENTRE SEMANA 2:00 p. m. - 8:00 p. m.<br>FINES DE SEMANA 10 a. m. - 8:00 p. m.',
-      'hours.mayfair': 'LUN, JUE, VIE 2:00 p. m. - 8:00 p. m.<br>MAR &amp; MIÉ CERRADO<br>SÁB, DOM 10:00 a. m. - 8:00 p. m.',
-      'hours.mainplace': 'LUN A JUE 3:00 p. m. - 8:00 p. m.<br>VIE A DOM Y FERIADOS 10:00 a. m. - 9:00 p. m.',
-      'hours.mainplace_note': 'Sesión nocturna para adultos disponible',
-      'hours.edisonmall': 'ENTRE SEMANA 3:00 p. m. - 7:00 p. m.<br>FINES DE SEMANA 10 a. m. - 7:00 p. m.',
-      'hours.afternoon_evening': 'ENTRE SEMANA 3:00 p. m. - 8:00 p. m.<br>FINES DE SEMANA 10 a. m. - 8:00 p. m.',
-      'hours.default': 'ENTRE SEMANA MEDIODÍA - 8:00 p. m.<br>FINES DE SEMANA 10 a. m. - 8:00 p. m.',
 
       'vendor.meta.title': 'Postúlate al Royal Vibe – Proveedores y comida | The Royal Duck',
       'vendor.meta.desc':

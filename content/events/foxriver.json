@@ -1,0 +1,37 @@
+{
+  "eventKey": "foxriver",
+  "city": "Appleton",
+  "region": "Wisconsin",
+  "emoji": "🛒",
+  "venue": "Fox River Mall",
+  "timeZone": "America/Chicago",
+  "lat": 44.2614,
+  "lng": -88.4895,
+  "address": "4301 W Wisconsin Ave, Appleton, WI 54913",
+  "start": "2026-07-11T10:00",
+  "end": "2026-08-02T18:00",
+  "waiverUrl": "",
+  "glow": "var(--cyan)",
+  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/72a4f8e0-21fc-4e7a-5664-812828de4000/public",
+  "status": "published",
+  "theme": "default",
+  "hours": {
+    "en": "WEEKDAYS 3:00PM - 8:30PM\nWEEKENDS 10AM - 8:30PM",
+    "es": "ENTRE SEMANA 3:00 p. m. - 8:30 p. m.\nFINES DE SEMANA 10 a. m. - 8:30 p. m."
+  },
+  "hoursNote": {
+    "en": "",
+    "es": ""
+  },
+  "announcement": {
+    "en": "",
+    "es": ""
+  },
+  "booking": {
+    "enabled": true,
+    "host": "royalduck.checkfront.com",
+    "categoryId": "53",
+    "startDate": "",
+    "options": "tabs"
+  }
+}

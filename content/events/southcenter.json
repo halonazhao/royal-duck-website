@@ -1,0 +1,37 @@
+{
+  "eventKey": "southcenter",
+  "city": "Seattle",
+  "region": "Washington",
+  "emoji": "🛒",
+  "venue": "Westfield Southcenter",
+  "timeZone": "America/Los_Angeles",
+  "lat": 47.4585,
+  "lng": -122.2578,
+  "address": "2800 Southcenter Mall, Tukwila, WA 98188 (near The Cheesecake Factory)",
+  "start": "2026-07-31T10:00",
+  "end": "2026-08-23T18:00",
+  "waiverUrl": "",
+  "glow": "var(--lavender)",
+  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/476db8f0-b647-4c7b-1853-b90e3226b400/public",
+  "status": "published",
+  "theme": "ottawa",
+  "hours": {
+    "en": "WEEKDAYS 11AM - 8:30PM\nWEEKENDS 10AM - 8:30PM",
+    "es": "ENTRE SEMANA 11 a. m. - 8:30 p. m.\nFINES DE SEMANA 10 a. m. - 8:30 p. m."
+  },
+  "hoursNote": {
+    "en": "",
+    "es": ""
+  },
+  "announcement": {
+    "en": "",
+    "es": ""
+  },
+  "booking": {
+    "enabled": true,
+    "host": "royalduck.checkfront.com",
+    "categoryId": "56",
+    "startDate": "",
+    "options": "tabs"
+  }
+}

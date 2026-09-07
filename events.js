@@ -174,79 +174,20 @@
     });
   }
 
-  /** Optional notice shown above venue hours (Santa Ana / MainPlace adult night). */
+  function escapeText(value) {
+    return String(value || '').replace(/[&<>"']/g, function(c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; });
+  }
+  function textLines(value) { return escapeText(value).replace(/\r?\n/g, '<br>'); }
+  function eventText(ev, field) {
+    var lang = window.I18n && window.I18n.getLang ? window.I18n.getLang() : 'en';
+    var value = ev[field] || {};
+    return value[lang] || value.en || '';
+  }
   function venueHoursNote(ev) {
-    if (ev.eventKey !== 'mainplace') return '';
-    var note = window.I18n && window.I18n.t
-      ? window.I18n.t('hours.mainplace_note')
-      : 'Adult Night Session Available';
-    return '<strong class="evc-hours-note">' + note + '</strong><br>';
+    var note = eventText(ev, 'hoursNote');
+    return note ? '<strong class="evc-hours-note">' + textLines(note) + '</strong><br>' : '';
   }
-
-  /** Venue-specific weekdays/weekends (Tampa, Humble, San Antonio, Arlington, default). */
-  function venueHoursLines(ev) {
-    if (window.I18n && window.I18n.t) {
-      if (ev.eventKey === 'westshore') return window.I18n.t('hours.westshore');
-      if (ev.eventKey === 'vancouvermall') return window.I18n.t('hours.vancouvermall');
-      if (ev.eventKey === 'southcenter') return window.I18n.t('hours.southcenter');
-      if (ev.eventKey === 'oaklandmall') return window.I18n.t('hours.oaklandmall');
-      if (ev.eventKey === 'forestplaza') return window.I18n.t('hours.forestplaza');
-      if (ev.eventKey === 'woodfield') return window.I18n.t('hours.woodfield');
-      if (ev.eventKey === 'foxriver') return window.I18n.t('hours.foxriver');
-      if (ev.eventKey === 'deerbrook') return window.I18n.t('hours.deerbrook');
-      if (ev.eventKey === 'sanantonio') return window.I18n.t('hours.sa');
-      if (ev.eventKey === 'greensboro') return window.I18n.t('hours.greensboro');
-      if (ev.eventKey === 'mayfair') return window.I18n.t('hours.mayfair');
-      if (ev.eventKey === 'mainplace') return window.I18n.t('hours.mainplace');
-      if (ev.eventKey === 'edisonmall') return window.I18n.t('hours.edisonmall');
-      if (ev.eventKey === 'arlington' || ev.eventKey === 'franklinpark')
-        return window.I18n.t('hours.afternoon_evening');
-      return window.I18n.t('hours.default');
-    }
-    if (ev.eventKey === 'westshore') {
-      return 'WEEKDAYS 3:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM';
-    }
-    if (ev.eventKey === 'vancouvermall') {
-      return 'WEEKDAYS 11AM - 9:00PM<br>WEEKENDS 10AM - 9:00PM';
-    }
-    if (ev.eventKey === 'southcenter') {
-      return 'WEEKDAYS 11AM - 8:30PM<br>WEEKENDS 10AM - 8:30PM';
-    }
-    if (ev.eventKey === 'oaklandmall') {
-      return 'MON - THU 3:00PM - 9:00PM<br>FRI, SAT, SUN 10AM - 9:00PM';
-    }
-    if (ev.eventKey === 'forestplaza') {
-      return 'MON - THU 2:00PM - 8:00PM<br>FRI, SAT, SUN 10AM - 8:00PM';
-    }
-    if (ev.eventKey === 'woodfield') {
-      return 'WEEKDAYS 2:00PM - 8:30PM<br>WEEKENDS &amp; HOLIDAYS 10AM - 8:30PM';
-    }
-    if (ev.eventKey === 'foxriver') {
-      return 'WEEKDAYS 3:00PM - 8:30PM<br>WEEKENDS 10AM - 8:30PM';
-    }
-    if (ev.eventKey === 'deerbrook') {
-      return 'WEEKDAYS 2:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM';
-    }
-    if (ev.eventKey === 'sanantonio') {
-      return 'WEEKDAYS 2:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM';
-    }
-    if (ev.eventKey === 'greensboro') {
-      return 'WEEKDAYS 2:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM';
-    }
-    if (ev.eventKey === 'mayfair') {
-      return 'MON, THU, FRI 2:00PM - 8:00PM<br>TUE & WED CLOSED<br>SAT, SUN 10:00AM - 8:00PM';
-    }
-    if (ev.eventKey === 'mainplace') {
-      return 'MON - THU 3:00PM - 8:00PM<br>FRI - SUN &amp; HOLIDAYS 10:00AM - 9:00PM';
-    }
-    if (ev.eventKey === 'edisonmall') {
-      return 'WEEKDAYS 3:00PM - 7:00PM<br>WEEKENDS 10AM - 7:00PM';
-    }
-    if (ev.eventKey === 'arlington' || ev.eventKey === 'franklinpark') {
-      return 'WEEKDAYS 3:00PM - 8:00PM<br>WEEKENDS 10AM - 8:00PM';
-    }
-    return 'WEEKDAYS NOON - 8:00PM<br>WEEKENDS 10AM - 8:00PM';
-  }
+  function venueHoursLines(ev) { return textLines(eventText(ev, 'hours')); }
 
   function renderEV(){
     var g = document.getElementById('evGrid');
@@ -271,22 +212,22 @@
       var cdH = window.I18n && window.I18n.t ? window.I18n.t('events.cd_hrs') : 'Hrs';
       var cdM = window.I18n && window.I18n.t ? window.I18n.t('events.cd_min') : 'Min';
       var cdS = window.I18n && window.I18n.t ? window.I18n.t('events.cd_sec') : 'Sec';
-      var bgStyle = ev.cardBg ? ';background-image:url('+ev.cardBg+')' : '';
-      var cardClass = 'evc' + (ev.cardBg ? ' evc--card-bg' : '') + (ev.city === 'Ottawa' || ev.venue === 'Deerbrook Mall' || ev.venue === 'Oakland Mall' || ev.venue === 'Westfield Southcenter' ? ' evc--ottawa' : '') + (ev.city === 'Niagara Falls' ? ' evc--niagara' : '') + (ev.venue === 'Hurricane Harbor Arlington' ? ' evc--arlington' : '') + (ev.eventKey === 'franklinpark' || ev.eventKey === 'woodfield' ? ' evc--franklinpark' : '') + (ev.city === 'San Antonio' ? ' evc--san-antonio' : '');
+      var bgStyle = ev.cardBg ? ';background-image:url('+escapeText(ev.cardBg)+')' : '';
+      var cardClass = 'evc' + (ev.cardBg ? ' evc--card-bg' : '') + (ev.theme && ev.theme !== 'default' ? ' evc--' + escapeText(ev.theme) : '');
       return '<div class="'+cardClass+'" data-i="'+i+'" style="opacity:0'+bgStyle+'">' +
         '<div class="evc-glow" style="background:'+ev.glow+'"></div>' +
-        '<div class="evc-hd"><div class="evc-city"><div><div class="evc-nm">'+ev.city+'</div><div class="evc-rg">'+ev.region+'</div></div></div>' +
+        '<div class="evc-hd"><div class="evc-city"><div><div class="evc-nm">'+escapeText(ev.city)+'</div><div class="evc-rg">'+escapeText(ev.region)+'</div></div></div>' +
         (st==='live'?'<div class="evc-st st-live"><span class="st-dot"></span>'+liveLb+'</div>':st==='upcoming'?'<div class="evc-st st-up">'+upLb+'</div>':'<div class="evc-st st-end">'+endLb+'</div>') + '</div>' +
         '<div class="evc-dl">' +
-          '<div class="evc-d"><span class="evc-di"></span><div><span class="evc-v">'+ev.venue+'</span><br><span class="evc-lb">'+ev.address+'</span></div></div>' +
+          '<div class="evc-d"><span class="evc-di"></span><div><span class="evc-v">'+escapeText(ev.venue)+'</span><br><span class="evc-lb">'+textLines(ev.address)+'</span></div></div>' +
           '<div class="evc-d"><span class="evc-di"></span><div><span class="evc-v">'+fmtDate(ev.start, ev.timeZone, false)+' — '+fmtDate(ev.end, ev.timeZone, true)+'</span></div></div>' +
           '<div class="evc-d"><span class="evc-di"></span><div><span class="evc-v">'+venueHoursNote(ev)+venueHoursLines(ev)+'</span><br><span class="evc-lb">'+localCap+'</span></div></div>' +
-          (ev.note ? '<div class="evc-d"><span class="evc-di"></span><div><span class="evc-v">'+ev.note+'</span></div></div>' : '') +
+          (eventText(ev, 'announcement') ? '<div class="evc-d"><span class="evc-di"></span><div><span class="evc-v">'+textLines(eventText(ev, 'announcement'))+'</span></div></div>' : '') +
         '</div>' +
         (cd ? '<div class="evc-cd"><div class="cd-u"><div class="cd-n">'+cd.d+'</div><div class="cd-l">'+cdD+'</div></div><div class="cd-u"><div class="cd-n">'+cd.h+'</div><div class="cd-l">'+cdH+'</div></div><div class="cd-u"><div class="cd-n">'+cd.m+'</div><div class="cd-l">'+cdM+'</div></div><div class="cd-u"><div class="cd-n">'+cd.s+'</div><div class="cd-l">'+cdS+'</div></div></div>' : '') +
         '<div class="evc-ft">' +
-          (st!=='ended'&&ev.ticketUrl ? '<a href="'+tix+'" class="btn bt bs ev-get-tickets-btn" data-ev-key="'+(ev.eventKey||'')+'" data-ev-city="'+((ev.city||'').replace(/"/g,'&quot;'))+'" data-ev-region="'+((ev.region||'').replace(/"/g,'&quot;'))+'" data-ev-venue="'+((ev.venue||'').replace(/"/g,'&quot;'))+'">'+getT+'</a>' : '') +
-          (st==='live'&&ev.waiverUrl ? '<a href="'+ev.waiverUrl+'" class="btn bc bs ev-waiver-btn" data-rd-lang-skip="1">'+signW+'</a>' : '') +
+          (st!=='ended'&&ev.ticketUrl ? '<a href="'+escapeText(tix)+'" class="btn bt bs ev-get-tickets-btn" data-ev-key="'+escapeText(ev.eventKey)+'" data-ev-city="'+escapeText(ev.city)+'" data-ev-region="'+escapeText(ev.region)+'" data-ev-venue="'+escapeText(ev.venue)+'">'+getT+'</a>' : '') +
+          (st==='live'&&ev.waiverUrl ? '<a href="'+escapeText(ev.waiverUrl)+'" class="btn bc bs ev-waiver-btn" data-rd-lang-skip="1">'+signW+'</a>' : '') +
           (st==='ended' ? '<span style="color:var(--soft);font-size:.82rem;font-weight:600;padding:8px 0">'+thx+'</span>' : '') +
         '</div></div>';
     }).join('');

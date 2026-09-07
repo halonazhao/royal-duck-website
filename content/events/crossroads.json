@@ -1,0 +1,37 @@
+{
+  "eventKey": "crossroads",
+  "city": "St. Cloud",
+  "region": "Minnesota",
+  "emoji": "🛒",
+  "venue": "Crossroads Center",
+  "timeZone": "America/Chicago",
+  "lat": 45.554,
+  "lng": -94.2247,
+  "address": "4101 W Division St, St. Cloud, MN 56301",
+  "start": "2026-06-26T10:00",
+  "end": "2026-07-19T18:00",
+  "waiverUrl": "",
+  "glow": "var(--teal)",
+  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/72a4f8e0-21fc-4e7a-5664-812828de4000/public",
+  "status": "published",
+  "theme": "default",
+  "hours": {
+    "en": "WEEKDAYS NOON - 8:00PM\nWEEKENDS 10AM - 8:00PM",
+    "es": "ENTRE SEMANA MEDIODÍA - 8:00 p. m.\nFINES DE SEMANA 10 a. m. - 8:00 p. m."
+  },
+  "hoursNote": {
+    "en": "",
+    "es": ""
+  },
+  "announcement": {
+    "en": "",
+    "es": ""
+  },
+  "booking": {
+    "enabled": true,
+    "host": "royalduck.checkfront.com",
+    "categoryId": "52",
+    "startDate": "",
+    "options": "tabs"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "eventKey": "edisonmall",
+  "city": "Fort Myers",
+  "region": "Florida",
+  "emoji": "🛒",
+  "venue": "Edison Mall",
+  "timeZone": "America/New_York",
+  "lat": 26.6098,
+  "lng": -81.8662,
+  "address": "4125 Cleveland Ave, Fort Myers, FL 33901",
+  "start": "2026-10-09T10:00",
+  "end": "2026-11-01T19:00",
+  "waiverUrl": "",
+  "glow": "var(--gold)",
+  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/476db8f0-b647-4c7b-1853-b90e3226b400/public",
+  "status": "published",
+  "theme": "default",
+  "hours": {
+    "en": "WEEKDAYS 3:00PM - 7:00PM\nWEEKENDS 10AM - 7:00PM",
+    "es": "ENTRE SEMANA 3:00 p. m. - 7:00 p. m.\nFINES DE SEMANA 10 a. m. - 7:00 p. m."
+  },
+  "hoursNote": {
+    "en": "",
+    "es": ""
+  },
+  "announcement": {
+    "en": "",
+    "es": ""
+  },
+  "booking": {
+    "enabled": true,
+    "host": "royalduck.checkfront.com",
+    "categoryId": "59",
+    "startDate": "",
+    "options": "tabs"
+  }
+}

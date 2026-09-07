@@ -1,0 +1,37 @@
+{
+  "eventKey": "mainplace",
+  "city": "Santa Ana",
+  "region": "California",
+  "emoji": "🛒",
+  "venue": "MainPlace Mall",
+  "timeZone": "America/Los_Angeles",
+  "lat": 33.7684,
+  "lng": -117.8677,
+  "address": "2800 N Main St, Santa Ana, CA 92705",
+  "start": "2026-08-29T10:00",
+  "end": "2026-09-27T19:30",
+  "waiverUrl": "",
+  "glow": "var(--coral)",
+  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/2c9edb26-f682-4fad-4a97-743454e22e00/public",
+  "status": "published",
+  "theme": "default",
+  "hours": {
+    "en": "MON - THU 3:00PM - 8:00PM\nFRI - SUN & HOLIDAYS 10:00AM - 9:00PM",
+    "es": "LUN A JUE 3:00 p. m. - 8:00 p. m.\nVIE A DOM Y FERIADOS 10:00 a. m. - 9:00 p. m."
+  },
+  "hoursNote": {
+    "en": "Adult Night Session Available",
+    "es": "Sesión nocturna para adultos disponible"
+  },
+  "announcement": {
+    "en": "",
+    "es": ""
+  },
+  "booking": {
+    "enabled": true,
+    "host": "royalduck.checkfront.com",
+    "categoryId": "58",
+    "startDate": "",
+    "options": "tabs"
+  }
+}

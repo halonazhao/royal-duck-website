@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+import { spawnSync } from 'node:child_process';
+import path from 'node:path';
+import os from 'node:os';
+const temporary = await fs.mkdtemp(path.join(os.tmpdir(), 'royal-duck-preview-'));
+const output = path.join(temporary, 'wrangler.jsonl');
+const result = spawnSync(path.resolve('node_modules/.bin/wrangler'), ['versions', 'upload', '--config', 'wrangler.staging.jsonc', '--message', `Event preview ${process.env.GITHUB_SHA || 'local'}`], { stdio: 'inherit', env: { ...process.env, WRANGLER_OUTPUT_FILE_PATH: output } });
+if (result.status !== 0) process.exit(result.status || 1);
+const records = (await fs.readFile(output, 'utf8')).trim().split('\n').map(line => JSON.parse(line));
+const upload = records.findLast(record => record.type === 'version-upload');
+if (!upload?.preview_url) throw new Error('Cloudflare did not return a version preview URL.');
+if (process.env.GITHUB_OUTPUT) await fs.appendFile(process.env.GITHUB_OUTPUT, `url=${upload.preview_url}\n`);
+console.log('Immutable preview: ' + upload.preview_url);

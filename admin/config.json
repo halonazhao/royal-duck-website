@@ -1,0 +1,54 @@
+{
+  "publish_mode": "editorial_workflow",
+  "media_folder": "assets/uploads",
+  "public_folder": "/assets/uploads",
+  "show_preview_links": true,
+  "collections": [{
+    "name": "events",
+    "label": "Events",
+    "label_singular": "Event",
+    "description": "Create or edit an event, save a draft, then open its staging preview. Halona reviews changes before they go live. Archive an event to remove it from the site.",
+    "folder": "content/events",
+    "format": "json",
+    "extension": "json",
+    "create": true,
+    "delete": false,
+    "publish": false,
+    "identifier_field": "eventKey",
+    "slug": "{{fields.eventKey}}",
+    "summary": "{{city}} — {{venue}} · {{start}} · {{status}}",
+    "sortable_fields": ["start", "city", "status"],
+    "preview_path": "home.html#events",
+    "fields": [
+      { "name": "eventKey", "label": "Event ID", "widget": "string", "hint": "A unique permanent ID, e.g. seattle-fall-2026. Keep it unchanged after creation; use Duplicate for a new event.", "pattern": ["^(?!all$)[a-z0-9]+(?:-[a-z0-9]+)*$", "Use lowercase letters, numbers and hyphens. The ID all is reserved."] },
+      { "name": "status", "label": "Visibility after approval", "widget": "select", "default": "published", "options": [{"label":"Show on website", "value":"published"}, {"label":"Keep hidden", "value":"draft"}, {"label":"Archive", "value":"archived"}], "hint": "Saving always creates a draft for review. This setting controls visibility once Halona publishes it." },
+      { "name": "city", "label": "City", "widget": "string" },
+      { "name": "region", "label": "State or province", "widget": "string" },
+      { "name": "venue", "label": "Venue", "widget": "string" },
+      { "name": "address", "label": "Address", "widget": "text", "hint": "Use a new line for extra directions." },
+      { "name": "timeZone", "label": "Venue time zone", "widget": "select", "default": "America/New_York", "options": ["America/New_York", "America/Detroit", "America/Chicago", "America/Denver", "America/Phoenix", "America/Los_Angeles", "America/Anchorage", "Pacific/Honolulu", "America/Toronto", "America/Vancouver", "America/Edmonton", "America/Winnipeg", "America/Regina", "America/Halifax", "America/St_Johns"] },
+      { "name": "start", "label": "Opening date and time", "widget": "venue-datetime", "hint": "Local time at the venue." },
+      { "name": "end", "label": "Closing date and time", "widget": "venue-datetime", "hint": "Local time at the venue. Upcoming/live/ended is calculated automatically." },
+      { "name": "lat", "label": "Latitude", "widget": "number", "value_type": "float", "min": -90, "max": 90, "step": 0.000001, "hint": "Used to help visitors find their closest event." },
+      { "name": "lng", "label": "Longitude", "widget": "number", "value_type": "float", "min": -180, "max": 180, "step": 0.000001 },
+      { "name": "hours", "label": "Opening hours", "widget": "object", "fields": [
+        { "name": "en", "label": "English", "widget": "text", "default": "WEEKDAYS 3:00PM - 8:00PM\nWEEKENDS 10AM - 8:00PM" },
+        { "name": "es", "label": "Spanish", "widget": "text", "required": false, "default": "", "hint": "Leave blank to use the English text." }
+      ]},
+      { "name": "hoursNote", "label": "Notice above opening hours", "widget": "object", "fields": [
+        { "name": "en", "label": "English", "widget": "text", "required": false, "default": "" },
+        { "name": "es", "label": "Spanish", "widget": "text", "required": false, "default": "" }
+      ]},
+      { "name": "announcement", "label": "Card announcement", "widget": "object", "fields": [
+        { "name": "en", "label": "English", "widget": "text", "required": false, "default": "" },
+        { "name": "es", "label": "Spanish", "widget": "text", "required": false, "default": "" }
+      ]},
+      { "name": "cardBg", "label": "Card background image", "widget": "image", "required": false, "default": "", "hint": "Upload a PNG, JPG or WebP image, or paste an HTTPS image URL. Use filenames with letters, numbers and hyphens." },
+      { "name": "theme", "label": "Card style", "widget": "select", "default": "default", "options": [{"label":"Aqua", "value":"default"}, {"label":"Lavender", "value":"ottawa"}, {"label":"Blue", "value":"niagara"}, {"label":"Lime", "value":"franklinpark"}, {"label":"Gold", "value":"san-antonio"}, {"label":"Lime, compact title (legacy Arlington)", "value":"arlington"}] },
+      { "name": "glow", "label": "Accent glow", "widget": "select", "default": "var(--teal)", "options": [{"label":"Teal", "value":"var(--teal)"}, {"label":"Gold", "value":"var(--gold)"}, {"label":"Coral", "value":"var(--coral)"}, {"label":"Lavender", "value":"var(--lavender)"}, {"label":"Aqua", "value":"var(--aqua)"}, {"label":"Blue", "value":"var(--cyan)"}, {"label":"Lime", "value":"#c5f84f"}] },
+      { "name": "emoji", "label": "Location icon", "widget": "string", "required": false, "default": "🛒" },
+      { "name": "booking", "label": "Checkfront checkout", "widget": "checkfront", "default": { "enabled": false, "host": "royalduck.checkfront.com", "categoryId": "", "startDate": "", "options": "tabs" } },
+      { "name": "waiverUrl", "label": "Waiver link", "widget": "string", "required": false, "default": "", "pattern": ["^$|^https://", "Use a secure HTTPS link."] }
+    ]
+  }]
+}
