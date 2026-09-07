@@ -1,37 +1,37 @@
 {
-  "eventKey": "mayfair",
-  "city": "Wauwatosa",
-  "region": "Wisconsin",
-  "emoji": "🛒",
-  "venue": "Mayfair Mall",
-  "timeZone": "America/Chicago",
-  "lat": 43.0616,
-  "lng": -88.0489,
-  "address": "2500 N Mayfair Rd, Wauwatosa, WI 53226",
-  "start": "2026-08-08T10:00",
-  "end": "2026-09-07T18:00",
-  "waiverUrl": "",
-  "glow": "var(--cyan)",
-  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/72a4f8e0-21fc-4e7a-5664-812828de4000/public",
-  "status": "published",
-  "theme": "default",
-  "hours": {
-    "en": "MON, THU, FRI 2:00PM - 8:00PM\nTUE & WED CLOSED\nSAT, SUN 10:00AM - 8:00PM",
-    "es": "LUN, JUE, VIE 2:00 p. m. - 8:00 p. m.\nMAR & MIÉ CERRADO\nSÁB, DOM 10:00 a. m. - 8:00 p. m."
-  },
   "hoursNote": {
     "en": "",
     "es": ""
   },
+  "start": "2026-08-08T10:00",
+  "eventKey": "mayfair",
+  "lng": -88.0489,
+  "emoji": "🛒",
   "announcement": {
     "en": "",
     "es": ""
   },
+  "theme": "san-antonio",
+  "city": "Wauwatosa",
+  "waiverUrl": "",
+  "glow": "var(--cyan)",
+  "venue": "Mayfair Mall",
+  "hours": {
+    "en": "MON, THU, FRI 2:00PM - 8:00PM\nTUE & WED CLOSED\nSAT, SUN 10:00AM - 8:00PM",
+    "es": "LUN, JUE, VIE 2:00 p. m. - 8:00 p. m.\nMAR & MIÉ CERRADO\nSÁB, DOM 10:00 a. m. - 8:00 p. m."
+  },
+  "status": "published",
+  "region": "Wisconsin",
+  "address": "2500 N Mayfair Rd, Wauwatosa, WI 53226",
+  "cardBg": "https://imagedelivery.net/P7Bk1eUomD9newW72dKliQ/2c9edb26-f682-4fad-4a97-743454e22e00/public",
+  "timeZone": "America/Chicago",
   "booking": {
     "enabled": true,
     "host": "royalduck.checkfront.com",
     "categoryId": "57",
     "startDate": "",
     "options": "tabs"
-  }
+  },
+  "end": "2026-09-07T18:00",
+  "lat": 43.0616
 }
