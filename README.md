@@ -26,11 +26,11 @@ The collection hides CMS Publish and Delete controls. To remove a card, set Visi
 
 ## Owner publication
 
-Configure `main` branch protection with required CODEOWNER approval by `@halonazhao`, required **Validate event content** check, dismissed stale approvals, no force pushes, no direct pushes, and enforcement for administrators. Only the owner should have repository administration access. Invite staff only after these protections are confirmed.
+The public repository has `main` branch protection with required CODEOWNER approval by `@halonazhao`, the **Validate event content** check, dismissed stale approvals, and blocked force pushes and deletions. Administrators can bypass these branch restrictions so Halona can merge owner-authored edits. Halona is currently the only administrator; staff must receive Write access, never Admin access. Even when using the owner exception, wait for validation to pass before merging.
 
-For staff changes, review and merge the pull request. Then open **Actions → Publish production (Halona only) → Run workflow → main**. Running this workflow is your explicit production approval. Both the initial actor and rerun actor must be `halonazhao`. The production environment allows only protected branches. GitHub's separate required-environment-reviewer feature is not supported by the current billing plan for this private repository; this implementation uses the owner-triggered publish workflow instead.
+For staff changes, review and merge the pull request. Then open **Actions → Publish production (Halona only) → Run workflow → main**. Both the initial actor and rerun actor must be `halonazhao`. The production environment allows only protected branches and requires approval from `halonazhao`: select **Review deployments → production → Approve and deploy**. This reviewer gate became available after the repository was made public.
 
-Owner-authored changes cannot be self-approved as a GitHub pull request. Assign another trusted code owner/reviewer if you want owner-authored code changes to use the same review rule; don't weaken protection for routine staff edits.
+For owner-authored changes, review the preview and passing checks, then use GitHub's administrator merge override if shown. GitHub cannot record self-approval of a pull request, but the separate production environment permits Halona to approve their own deployment.
 
 The build embeds that exact commit's content into the static deployment; the public site never reads mutable CMS drafts. `release.json` identifies the deployed source commit. For rollback, use the previous production Worker version in Cloudflare's Deployments screen; a content correction can also go through the same draft/review workflow. The pre-CMS production version recorded during setup is `ffa4ada5-20dc-4236-8edd-c5c63ceda1e3`.
 

@@ -9,10 +9,16 @@ function api(method, endpoint, body) {
 }
 api('PUT', `repos/${repository}/branches/main/protection`, {
   required_status_checks: { strict: true, contexts: ['Validate event content'] },
-  enforce_admins: true,
+  // Halona is the sole administrator and can merge owner-authored edits.
+  // Staff should receive Write access, never Admin access.
+  enforce_admins: false,
   required_pull_request_reviews: { dismiss_stale_reviews: true, require_code_owner_reviews: true, required_approving_review_count: 1 },
   restrictions: null, allow_force_pushes: false, allow_deletions: false, required_conversation_resolution: true
 });
 api('PUT', `repos/${repository}/environments/staging`, { deployment_branch_policy: null });
-api('PUT', `repos/${repository}/environments/production`, { deployment_branch_policy: { protected_branches: true, custom_branch_policies: false } });
+api('PUT', `repos/${repository}/environments/production`, {
+  prevent_self_review: false,
+  reviewers: [{ type: 'User', id: 28347043 }],
+  deployment_branch_policy: { protected_branches: true, custom_branch_policies: false }
+});
 console.log('Branch review requirements and deployment environments configured. Add environment secrets before enabling deployments.');
